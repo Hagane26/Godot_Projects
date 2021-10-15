@@ -1,0 +1,184 @@
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://Assets/Imgs/Players/Player1/Idle (7).png" type="Texture" id=1]
+[ext_resource path="res://Assets/Scripts/character/player/player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scenes/GUI/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Idle (9).png" type="Texture" id=4]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Idle (5).png" type="Texture" id=5]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Idle (10).png" type="Texture" id=6]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Idle (4).png" type="Texture" id=7]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Idle (6).png" type="Texture" id=8]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Idle (1).png" type="Texture" id=9]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Idle (3).png" type="Texture" id=10]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Idle (2).png" type="Texture" id=11]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Idle (8).png" type="Texture" id=12]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Run (8).png" type="Texture" id=13]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Run (5).png" type="Texture" id=14]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Run (1).png" type="Texture" id=15]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Run (4).png" type="Texture" id=16]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Run (6).png" type="Texture" id=17]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Run (3).png" type="Texture" id=18]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Run (2).png" type="Texture" id=19]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Run (7).png" type="Texture" id=20]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Jump (3).png" type="Texture" id=21]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Jump (4).png" type="Texture" id=22]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Jump (5).png" type="Texture" id=23]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Melee (6).png" type="Texture" id=24]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Jump (2).png" type="Texture" id=25]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Jump (8).png" type="Texture" id=26]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Jump (9).png" type="Texture" id=27]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Jump (10).png" type="Texture" id=28]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Jump (7).png" type="Texture" id=29]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Jump (6).png" type="Texture" id=30]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Melee (7).png" type="Texture" id=31]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Melee (2).png" type="Texture" id=32]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Melee (3).png" type="Texture" id=33]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Melee (5).png" type="Texture" id=34]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Melee (1).png" type="Texture" id=35]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Melee (4).png" type="Texture" id=36]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Shoot (1).png" type="Texture" id=37]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Shoot (2).png" type="Texture" id=38]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Shoot (3).png" type="Texture" id=39]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Dead (1).png" type="Texture" id=40]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Dead (3).png" type="Texture" id=41]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Dead (4).png" type="Texture" id=42]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Dead (2).png" type="Texture" id=43]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Dead (5).png" type="Texture" id=44]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Dead (6).png" type="Texture" id=45]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Dead (9).png" type="Texture" id=46]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Dead (10).png" type="Texture" id=47]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Dead (8).png" type="Texture" id=48]
+[ext_resource path="res://Assets/Imgs/Players/Player1/Dead (7).png" type="Texture" id=49]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "jump",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "atk_shoot",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "die",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 24 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "atk_melee",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 21.0221
+height = 55.7028
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 21.6591, 5.43054 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 7.93158, 32.3333 )
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 20.0548
+height = 53.4054
+
+[node name="player" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 1 )
+animation = "idle"
+frame = 5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -9.51355, -2.37839 )
+current = true
+limit_smoothed = true
+smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -1.99071, 64.0056 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
+
+[node name="atk_melee_area_R" type="Area2D" parent="."]
+position = Vector2( -415.249, -302.83 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="atk_melee_area_R"]
+position = Vector2( 453.146, 307.51 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="atk_melee_area_L" type="Area2D" parent="."]
+position = Vector2( -502.098, -301.096 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="atk_melee_area_L"]
+position = Vector2( 453.146, 307.51 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="body_sensor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body_sensor"]
+shape = SubResource( 5 )
+
+[node name="sound_effect" type="AudioStreamPlayer2D" parent="."]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="GUI" instance=ExtResource( 3 )]
+margin_left = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[connection signal="item_take" from="." to="GUI/GUI" method="_on_player_item_take"]
+[connection signal="set_max_bullet" from="." to="GUI/GUI" method="_on_player_set_max_bullet"]
+[connection signal="set_max_hp" from="." to="GUI/GUI" method="_on_player_set_max_hp"]
+[connection signal="set_max_stamina" from="." to="GUI/GUI" method="_on_player_set_max_stamina"]
+[connection signal="update_bullet" from="." to="GUI/GUI" method="_on_player_update_bullet"]
+[connection signal="update_hp" from="." to="GUI/GUI" method="_on_player_update_hp"]
+[connection signal="update_stamina" from="." to="GUI/GUI" method="_on_player_update_stamina"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="atk_melee_area_R" to="." method="_on_atk_melee_area_R_body_entered"]
+[connection signal="area_entered" from="body_sensor" to="." method="_on_body_sensor_area_entered"]
+[connection signal="area_exited" from="body_sensor" to="." method="_on_body_sensor_area_exited"]
+[connection signal="player_die" from="GUI/GUI" to="." method="_on_GUI_player_die"]
+[connection signal="player_empty_stamina" from="GUI/GUI" to="." method="_on_GUI_player_empty_stamina"]

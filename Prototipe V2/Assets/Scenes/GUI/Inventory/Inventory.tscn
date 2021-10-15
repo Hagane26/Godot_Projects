@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Font/Frisky Puppy.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Scripts/GUI/Inventory/Inventory.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.207843, 0.184314, 0.184314, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+font_data = ExtResource( 1 )
+
+[node name="Inventory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+max_slot = 15
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 30.0
+margin_right = -100.0
+margin_bottom = -30.0
+
+[node name="topBar" type="Panel" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 0.102
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = 10.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/topBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 10.0
+margin_right = -30.0
+margin_bottom = -10.0
+custom_fonts/font = SubResource( 2 )
+text = "Inventory
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="slotscontainer" type="ScrollContainer" parent="Panel"]
+anchor_left = 0.085
+anchor_top = 0.157
+anchor_right = 0.574
+anchor_bottom = 0.981
+margin_left = -0.0400009
+margin_top = 0.219994
+margin_right = 4.02399
+margin_bottom = -4.74005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="slots" type="GridContainer" parent="Panel/slotscontainer"]
+columns = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="."]
+anchor_left = 0.8
+anchor_top = 0.903
+anchor_right = 0.892
+anchor_bottom = 0.94
+margin_left = -0.389221
+margin_top = -0.15686
+margin_right = -0.197266
+margin_bottom = -0.136841
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "click"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

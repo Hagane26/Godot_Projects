@@ -1,0 +1,23 @@
+[id_0]
+
+name="Steel Dagger"
+type="weapon"
+weight=5
+base_damage=5
+img=Resource( "res://Assets/Imgs/Items/slice12.png")
+
+[id_1]
+
+name="Revolver"
+type="weapon"
+weight=3
+base_damage=10
+img=Resource( "res://Assets/Imgs/Items/slice13.png")
+
+[id_2]
+
+name="Steel Sword"
+type="weapon"
+weight=10
+base_damage=20
+img=Resource( "res://Assets/Imgs/Items/slice13.png")

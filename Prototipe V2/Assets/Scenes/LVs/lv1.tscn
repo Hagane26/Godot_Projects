@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Imgs/Maps/Map1/Convert Tres/map1.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Scenes/Player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scenes/Support/Items/Item_Bullet_.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Imgs/Maps/Map1/BG.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Scenes/Enemy/enemy_zombie male.tscn" type="PackedScene" id=5]
+
+[node name="lv1" type="Node2D"]
+
+[node name="floor" type="Node2D" parent="."]
+
+[node name="ground_bot" type="TileMap" parent="floor"]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -851972, 4, 0, -851971, 4, 0, -851970, 5, 0, -786436, 4, 0, -786435, 4, 0, -786434, 5, 0, -720899, 4, 0, -720898, 5, 0, -655364, 4, 0, -655363, 4, 0, -655362, 5, 0, -589827, 4, 0, -589826, 5, 0, -524292, 4, 0, -524291, 4, 0, -524290, 5, 0, -458755, 4, 0, -458754, 5, 0, -393220, 4, 0, -393219, 4, 0, -393218, 5, 0, -327683, 4, 0, -327682, 5, 0, -393153, 3, 0, -262148, 4, 0, -262147, 4, 0, -262146, 5, 0, -327617, 3, 0, -196611, 4, 0, -196610, 5, 0, -262081, 3, 0, -131076, 4, 0, -196545, 3, 0, -65538, 4, 0, -131072, 1, 0, -131070, 1, 0, -131068, 1, 0, -131066, 1, 0, -131064, 1, 0, -131062, 1, 0, -131060, 1, 0, -131058, 1, 0, -131056, 1, 0, -131054, 1, 0, -131052, 1, 0, -131050, 1, 0, -131048, 1, 0, -131046, 1, 0, -131044, 1, 0, -131042, 1, 0, -131040, 1, 0, -131038, 1, 0, -131037, 1, 0, -131036, 1, 0, -131035, 1, 0, -131034, 1, 0, -131033, 1, 0, -131032, 1, 0, -131031, 1, 0, -131029, 1, 0, -131028, 1, 0, -131027, 1, 0, -131026, 1, 0, -131025, 1, 0, -131024, 1, 0, -131023, 1, 0, -131022, 1, 0, -131021, 1, 0, -131019, 1, 0, -131018, 1, 0, -131017, 1, 0, -131016, 1, 0, -131015, 1, 0, -131014, 1, 0, -131013, 1, 0, -131012, 1, 0, -131011, 1, 0, -131009, 3, 0, -4, 4, 0, 65532, 4, 0, 65534, 4, 0, 65535, 4, 0, 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 7, 4, 0, 8, 4, 0, 9, 4, 0, 10, 4, 0, 11, 4, 0, 12, 4, 0, 13, 4, 0, 14, 4, 0, 15, 4, 0, 16, 4, 0 )
+
+[node name="ground_up" type="TileMap" parent="floor"]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 1 )
+collision_layer = 2
+format = 1
+
+[node name="enemy_zombie male" parent="." instance=ExtResource( 5 )]
+position = Vector2( 767.121, -228.695 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 250.146, -192.652 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 511.165, 299.643 )
+scale = Vector2( 0.516736, 0.534617 )
+texture = ExtResource( 4 )
+
+[node name="Item_Bullet_1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 576.357, -99.7518 )

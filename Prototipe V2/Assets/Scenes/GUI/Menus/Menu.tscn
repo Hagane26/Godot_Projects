@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scripts/GUI/Menu.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.890196, 0.882353, 0.0588235, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 300.0
+margin_top = 150.0
+margin_right = -300.0
+margin_bottom = -150.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 150.0
+margin_top = 40.0
+margin_right = -150.0
+margin_bottom = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume_btn" type="Button" parent="Panel/VBoxContainer"]
+margin_right = 124.0
+margin_bottom = 20.0
+action_mode = 0
+text = "Resume"
+
+[node name="Inventory" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 24.0
+margin_right = 124.0
+margin_bottom = 44.0
+text = "Inventory"
+
+[node name="Options" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 48.0
+margin_right = 124.0
+margin_bottom = 68.0
+text = "Options"
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 72.0
+margin_right = 124.0
+margin_bottom = 92.0
+text = "Exit"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Resume_btn" to="." method="_on_Resume_btn_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Inventory" to="." method="_on_Inventory_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

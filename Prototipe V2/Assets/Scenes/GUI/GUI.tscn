@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Scenes/GUI/HealthBar/healthBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scripts/GUI/GUI.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scenes/GUI/StaminaBar/StaminaBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Font/Frisky Puppy.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Imgs/Obj/Bullets/bullet3.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.266667, 0.239216, 0.180392, 1 )
+border_color = Color( 0.862745, 0.701961, 0.113725, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 10
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 4 )
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 86.0
+margin_top = 10.0
+margin_right = 86.0
+margin_bottom = 10.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBC" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu_btn" type="Button" parent="HBC"]
+margin_right = 50.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 50, 0 )
+custom_styles/normal = SubResource( 1 )
+text = "MENU"
+
+[node name="VBC" type="VBoxContainer" parent="HBC"]
+margin_left = 54.0
+margin_right = 454.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="healthBar" parent="HBC/VBC" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 400.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 400, 25 )
+
+[node name="StaminaBar" parent="HBC/VBC" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 29.0
+margin_right = 400.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 300, 10 )
+
+[node name="bot_HBC" type="HBoxContainer" parent="."]
+anchor_left = 0.02
+anchor_top = 0.907
+anchor_right = 1.0
+anchor_bottom = 0.967
+margin_left = 40.0
+margin_top = -9.20001
+margin_right = 20.0
+margin_bottom = -0.200012
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="bot_HBC"]
+position = Vector2( -28.9019, 17.2165 )
+rotation = -1.5708
+scale = Vector2( 0.130457, 0.128324 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="bot_HBC"]
+margin_top = 2.0
+margin_right = 21.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="btn_take" type="Button" parent="."]
+visible = false
+margin_left = 646.0
+margin_top = 277.0
+margin_right = 720.0
+margin_bottom = 309.0
+text = "Take"
+
+[connection signal="pressed" from="HBC/Menu_btn" to="." method="_on_Menu_btn_pressed"]

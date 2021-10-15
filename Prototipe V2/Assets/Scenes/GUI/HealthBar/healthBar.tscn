@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.309804, 0.701961, 0.0862745, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.94902, 0.917647, 0.0431373, 1 )
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.447059, 0.235294, 0.235294, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.94902, 0.917647, 0.0431373, 1 )
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[node name="healthBar" type="ProgressBar"]
+anchor_right = 0.312
+anchor_bottom = 0.067
+margin_right = -0.488007
+margin_bottom = -0.200001
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+custom_colors/font_color = Color( 0.0666667, 0.0627451, 0.0627451, 1 )
+value = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Imgs/Obj/Bullets/bullet3.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Scripts/support/Bullet.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Imgs/Obj/Hit/ImpactMetal5OrangeBrown .png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 192, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 384, 0, 192, 192 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "Bullet_Hit",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Bullet_Fly",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 5.34008, 2.59177 )
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 2.27016
+
+[node name="Bullet" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.0218701, 0.0218748 )
+scale = Vector2( 0.0252525, 0.0168738 )
+frames = SubResource( 4 )
+animation = "Bullet_Fly"
+playing = true
+
+[node name="sensor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sensor"]
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 6 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+scale = Vector2( 0.250313, 0.294822 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="body_entered" from="sensor" to="." method="_on_sensor_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
